@@ -4,10 +4,11 @@
 
 @model DunwoodCrossing.ViewModels.KarachtersViewModel
 
+    <div class="container marketing">
+<div class="top_block">
+    </div>
 
 <h3>@ViewData["Message"]</h3>
-
-    <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
       <div class="row" >
@@ -22,7 +23,7 @@
           {
             @id
           } 
-          <p class="quote">@Karachter.Quote</p>
+          <p class="quote">@Html.Raw(Karachter.Quote.Replace("||", "</p><p class='quote'>"))</p>
         </div><!-- /.col-lg-4 -->
         }
        
@@ -72,7 +73,7 @@
 				</div>
 				<div class="modal-body">
 					<p>
-@Karachter.Background</p>
+@Html.Raw(Karachter.Background.Replace("||", "</p><p>"))</p>
 				</div>
 			</div>
 			<div class="col-lg-1"></div>
@@ -87,28 +88,27 @@
 					<i>Strength</i>: <div style="float:right;text-align: right">@Karachter.Strength</div> 
 					</li>
 					<li class="stat-item">
-					<i>Dexterity</i>: <div style="float:right;text-align: right">16</div>
+					<i>Dexterity</i>: <div style="float:right;text-align: right">@Karachter.Dexterity</div>
 					</li>
 					<li class="stat-item">
-					<i>Constitution</i>: <div style="float:right;text-align: right">17</div>
+					<i>Constitution</i>: <div style="float:right;text-align: right">@Karachter.Constitution</div>
 					</li>
 					<li class="stat-item">
-					<i>Inteligence</i>: <div style="float:right;text-align: right">15</div>
+					<i>Intelligence</i>: <div style="float:right;text-align: right">@Karachter.Intelligence</div>
 					</li>
 					<li class="stat-item">
-					<i>Wisdom</i>: <div style="float:right;text-align: right">8</div>
+					<i>Wisdom</i>: <div style="float:right;text-align: right">@Karachter.Wisdom</div>
 					</li>
 					<li class="stat-item">
-					<i>Charisma</i>: <div style="float:right;text-align: right">9</div>
+					<i>Charisma</i>: <div style="float:right;text-align: right">@Karachter.Charisma</div>
 					</li>
 					</ul>
 				</div>
 				<div class="modal-body" style="padding: 10px 0 10px 0;">
-				<b>Eyes</b>: Dark brown<br />
-<br /><b>Coloration</b>: Dark brown<br />
-<br /><b>Clothing</b>: Practical werables, never one for jewelry except a wooden carved archaic symbol give by her mother.<br />
-<br /><b>Accessories</b>: <br />
-<br /><b>Scars</b>: A short but intensly pale scar along her right cheeck where a stone mill cut her as a child<br />
+               <p>
+                    @Html.Raw(Karachter.Description?.Replace("||", "</p><p>"))
+                    </p>
+				
 				</div>
 			</div>
 		</div>

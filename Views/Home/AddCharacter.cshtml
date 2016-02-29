@@ -6,41 +6,45 @@
 
     <form method="post" action="@Url.Content("~/Home/AddKarachterPost")" enctype="multipart/form-data">
     <br /><br /><br /><br /><br /><br /><br />
-<ul>
+<ul class="input_list">
     <li>
- Name: @Html.TextBox("Name")
+ @Html.TextBox("Name") Name
  </li>
  <li>
-  Background:  @Html.TextBox("Background")
+<textarea class="text_area" placeholder="Background, use || to insert ny paragraph" name="Background" id="background"></textarea>
  </li>
  <li>
-  Strength:  @Html.TextBox("Strength")
+    
+   @Html.TextBox("Strength") Strength:
  </li>
  <li>
-  Dexterity:  @Html.TextBox("Dexterity")
+    @Html.TextBox("Dexterity") Dexterity
  </li>
  <li>
-  Constitution:  @Html.TextBox("Constitution")
+    @Html.TextBox("Constitution") Constitution
  </li>
  <li>
-  Intelligence:  @Html.TextBox("Intelligence")
+    @Html.TextBox("Intelligence") Intelligence
  </li>
  <li>
-  Wisdom:  @Html.TextBox("Wisdom")
+    @Html.TextBox("Wisdom") Wisdom
  </li>
  <li>
-  Charisma:  @Html.TextBox("Charisma")
+    @Html.TextBox("Charisma") Charisma
  </li>
  <li>
-  Hitpoints:  @Html.TextBox("Hitpoints")
+    @Html.TextBox("Hitpoints") Hitpoints
  </li>
  <li>
-  Quote:  @Html.TextBox("Quote")
+  <textarea class="text_area" placeholder="Quote, use || to insert ny paragraph" name="Quote" id="quote"></textarea>
   </li>
+  <li>
+      <textarea class="text_area" placeholder="Description, use || to insert ny paragraph" name="Description" id="description"></textarea>
+      </li>
 </ul>
-  <input type="file" name="file" />
-  <input type="file" name="filesquare" />
+Big picture  <input type="file" name="file" />
+All sides equal  <input type="file" name="filesquare" />
   
-    <input type="submit" value="add">
+    <input type="submit" value="Create Character" style="padding: 5px; border-radius: 5px; color: #222222; margin: 10px 0; ">
 
 </form>

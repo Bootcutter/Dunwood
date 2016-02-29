@@ -32,6 +32,26 @@ body {
   font-family: ring;
 }
 
+.text_area
+{
+    height: 200px;
+    width: 500px;
+    font-family: FiraSans-MediumItalic;
+}
+
+.input_list li{
+    list-style: none;
+    padding: 5px;
+}
+.input_list input, .input_list textarea{
+    padding: 3px; border-radius: 5px; color: #222222;
+}
+
+.top_block
+{
+    height: 70px;
+}
+
 .quote
 {
     font-family: FiraSans-MediumItalic;
@@ -218,17 +238,17 @@ padding: 0;
 
 
 .blur-in {
-  -webkit-animation: blur 2s forwards;
-  -moz-animation: blur 2s forwards;
-  -o-animation: blur 2s forwards;
-  animation: blur 2s forwards;
+  -webkit-animation: blur 1s forwards;
+  -moz-animation: blur 1s forwards;
+  -o-animation: blur 1s forwards;
+  animation: blur 1s forwards;
 }
 
 .blur-out {
-  -webkit-animation: blur-out 2s forwards;
-  -moz-animation: blur-out 2s forwards;
-  -o-animation: blur-out 2s forwards;
-  animation: blur-out 2s forwards;
+  -webkit-animation: blur-out 1s forwards;
+  -moz-animation: blur-out 1s forwards;
+  -o-animation: blur-out 1s forwards;
+  animation: blur-out 1s forwards;
 }
 
 @-webkit-keyframes 

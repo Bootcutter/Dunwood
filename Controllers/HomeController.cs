@@ -29,7 +29,7 @@ namespace DunwoodCrossing.Controllers
 
         public IActionResult Log()
         {
-            ViewData["Message"] = "Karachters";
+            ViewData["Message"] = "Log of Events";
 
             return View();
         }
@@ -39,7 +39,7 @@ namespace DunwoodCrossing.Controllers
             var model = new DunwoodCrossing.ViewModels.KarachtersViewModel();
             var data =  _repository.GetAllKarachters().ToList();
            model.Karachters = data;
-            ViewData["Message"] = "Log of Events";
+            ViewData["Message"] = "Characters";
 
             return View(model);
         }

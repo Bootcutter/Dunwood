@@ -22,6 +22,8 @@ namespace DunwoodCrossing.Classes
     public virtual string Quote { get; set; }
     public virtual string FileName {get; set;}
     public virtual string SquareFileName {get; set;}
-   
+    
+   public virtual string Description {get; set;}
+    
   }
 }
