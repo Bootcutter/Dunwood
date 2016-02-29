@@ -1,0 +1,12 @@
+{
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=tcp:gohitwrzpg.database.windows.net,1433;Database=DunwoodCrossing;User ID=Bootcut@gohitwrzpg;Password=BillaKilla3;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    }
+  },
+  "EntityFramework": {
+    "ApplicationDbContext": {
+      "ConnectionStringKey": "Data:DefaultConnection:ConnectionString"
+    }
+  }
+}

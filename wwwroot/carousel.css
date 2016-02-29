@@ -1,0 +1,368 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+@font-face {
+    font-family: FiraSans-Light;
+    src: url(FiraSans-Light.woff);
+}
+@font-face {
+    font-family: FiraSans-LightItalic;
+    src: url(FiraSans-LightItalic.woff);
+}
+@font-face {
+    font-family: neverwinter;
+    src: url(Neverwinter.ttf);
+}
+
+@font-face {
+    font-family: ring;
+    src: url(RINGM___.TTF);
+}
+@font-face {
+    font-family: FiraSans-MediumItalic;
+    src: url(FiraSans-MediumItalic.woff);
+}
+
+
+body {
+  padding-bottom: 40px;
+  color: #cccccc;
+  background-color: #121212;
+  background:url(images/final_fantasy.png) #121212 bottom left no-repeat; background-attachment:fixed;
+  font-family: ring;
+}
+
+.quote
+{
+    font-family: FiraSans-MediumItalic;
+}
+
+.quote:before
+{
+    content: open-quote;
+}
+
+.quote:after
+{
+    content: close-quote;
+}
+
+p
+{
+    font-family: FiraSans-Light;
+}
+
+@media (min-width: 768px) {
+.modal-dialog {
+    width: 700px;
+    margin: 30px auto;
+}
+}
+
+@media (min-width: 1200px){
+.modal-dialog {
+    width: 900px;
+    margin: 30px auto;
+}
+}
+
+.modal-object
+{
+height: 400px;
+cursor: pointer;
+}
+
+.modal-content
+{
+background-color: #454545;
+}
+ul.stat
+{
+padding: 0;
+}
+
+.stat-item
+{
+	list-style: none;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 700px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 700px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  min-width: 100%;
+ 
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.modal-image
+{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+
+.blur-in {
+  -webkit-animation: blur 2s forwards;
+  -moz-animation: blur 2s forwards;
+  -o-animation: blur 2s forwards;
+  animation: blur 2s forwards;
+}
+
+.blur-out {
+  -webkit-animation: blur-out 2s forwards;
+  -moz-animation: blur-out 2s forwards;
+  -o-animation: blur-out 2s forwards;
+  animation: blur-out 2s forwards;
+}
+
+@-webkit-keyframes 
+blur { 0% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+ 100% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+}
+
+@-moz-keyframes 
+blur { 0% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+ 100% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+}
+
+@-o-keyframes 
+blur { 0% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+ 100% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+}
+
+@keyframes 
+blur { 0% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+ 100% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+}
+
+@-webkit-keyframes 
+blur-out { 0% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+ 100% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+}
+ 
+@-moz-keyframes 
+blur-out { 0% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+ 100% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+}
+
+@-o-keyframes 
+blur-out { 0% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+ 100% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+}
+
+@keyframes 
+blur-out { 0% {
+ -webkit-filter: blur(4px);
+ -moz-filter: blur(4px);
+ -o-filter: blur(4px);
+ -ms-filter: blur(4px);
+ filter: blur(4px);
+}
+ 100% {
+ -webkit-filter: blur(0px);
+ -moz-filter: blur(0px);
+ -o-filter: blur(0px);
+ -ms-filter: blur(0px);
+ filter: blur(0px);
+}
+}

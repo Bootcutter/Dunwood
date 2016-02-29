@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+
+
+    <form method="post" action="@Url.Content("~/Home/AddKarachterPost")" enctype="multipart/form-data">
+    <br /><br /><br /><br /><br /><br /><br />
+<ul>
+    <li>
+ Name: @Html.TextBox("Name")
+ </li>
+ <li>
+  Background:  @Html.TextBox("Background")
+ </li>
+ <li>
+  Strength:  @Html.TextBox("Strength")
+ </li>
+ <li>
+  Dexterity:  @Html.TextBox("Dexterity")
+ </li>
+ <li>
+  Constitution:  @Html.TextBox("Constitution")
+ </li>
+ <li>
+  Intelligence:  @Html.TextBox("Intelligence")
+ </li>
+ <li>
+  Wisdom:  @Html.TextBox("Wisdom")
+ </li>
+ <li>
+  Charisma:  @Html.TextBox("Charisma")
+ </li>
+ <li>
+  Hitpoints:  @Html.TextBox("Hitpoints")
+ </li>
+ <li>
+  Quote:  @Html.TextBox("Quote")
+  </li>
+</ul>
+  <input type="file" name="file" />
+  <input type="file" name="filesquare" />
+  
+    <input type="submit" value="add">
+
+</form>

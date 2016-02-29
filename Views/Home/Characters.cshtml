@@ -1,0 +1,362 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@model DunwoodCrossing.ViewModels.KarachtersViewModel
+
+
+<h3>@ViewData["Message"]</h3>
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row" >
+       
+       @foreach(var Karachter in Model.Karachters)
+        {
+            var id = "#" + Karachter.Id.ToString();
+           <div class="col-lg-4 modal-object"  data-toggle="modal" data-target=@id>
+          <img class="img-circle img-circle-link" src="@Karachter.SquareFileName" alt="Generic placeholder image" width="140" height="140">
+          <h2>@Karachter.Name</h2> 
+          @if(Context.Request.Query["showId"]== "true")
+          {
+            @id
+          } 
+          <p class="quote">@Karachter.Quote</p>
+        </div><!-- /.col-lg-4 -->
+        }
+       
+	   <div class="col-lg-4 modal-object"  data-toggle="modal" data-target="#alina">
+          <img class="img-circle img-circle-link" src="~/images/alina-sq.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Alina Devar</h2>
+          <p class="quote">"I have no time nor inclination for your frivolous nature and childish jokes. Work has to be done and time waits for none."</p>
+        </div><!-- /.col-lg-4 -->
+		
+	 <div class="col-lg-4 modal-object"  data-toggle="modal" data-target="#aram">
+          <img class="img-circle img-circle-link" src="~/images/aram-sq.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Aram Strongwall</h2>
+          <p>"Come now friends, together we shall take on this task and together we shall conquer. One we stand alone but to us all, no task stand to tall."</p>
+        </div><!-- /.col-lg-4 -->
+		
+	 <div class="col-lg-4 modal-object"  data-toggle="modal" data-target="#niva">
+          <img class="img-circle img-circle-link" src="~/images/niva-sq.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Niva de Strongwall</h2>
+          <p>"I am thankfull for my lot. I have not much but what I have I gladly share. If you need a hand, I shall be there and reach mine out."</p>
+        </div><!-- /.col-lg-4 -->
+		
+	 <div class="col-lg-4 modal-object"  data-toggle="modal" data-target="#karon">
+          <img class="img-circle img-circle-link" src="~/images/karon-sq.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Karon Task</h2>
+          <p>"Come in friend, and tell me what ails you. How can I lessen your pains and unburden your step." </p>
+        </div><!-- /.col-lg-4 -->
+		
+	 
+      </div><!-- /.row -->
+      </div>
+    @section modals
+    {  
+          @foreach(var Karachter in Model.Karachters)
+        {
+            var id = Karachter.Id.ToString();
+            <div class="modal fade myModal" id="@id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="clear:both;">
+		<img class="img-circle modal-image" src="@Karachter.FileName" alt="Generic placeholder image" width="300" />
+		
+		<div class="modal-dialog row" role="document">
+
+			<div class="modal-content col-lg-8" >
+
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">@Karachter.Name</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+@Karachter.Background</p>
+				</div>
+			</div>l
+			<div class="col-lg-1"></div>
+			<div class="modal-content col-lg-3">
+	
+				<div class="modal-header">
+					Stats
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+					<ul class="stat">
+					<li class="stat-item">
+					<i>Strength</i>: <div style="float:right;text-align: right">@Karachter.Strength</div> 
+					</li>
+					<li class="stat-item">
+					<i>Dexterity</i>: <div style="float:right;text-align: right">16</div>
+					</li>
+					<li class="stat-item">
+					<i>Constitution</i>: <div style="float:right;text-align: right">17</div>
+					</li>
+					<li class="stat-item">
+					<i>Inteligence</i>: <div style="float:right;text-align: right">15</div>
+					</li>
+					<li class="stat-item">
+					<i>Wisdom</i>: <div style="float:right;text-align: right">8</div>
+					</li>
+					<li class="stat-item">
+					<i>Charisma</i>: <div style="float:right;text-align: right">9</div>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+				<b>Eyes</b>: Dark brown<br />
+<br /><b>Coloration</b>: Dark brown<br />
+<br /><b>Clothing</b>: Practical werables, never one for jewelry except a wooden carved archaic symbol give by her mother.<br />
+<br /><b>Accessories</b>: <br />
+<br /><b>Scars</b>: A short but intensly pale scar along her right cheeck where a stone mill cut her as a child<br />
+				</div>
+			</div>
+		</div>
+	</div>
+    
+        }
+      	<!-- modal one Karachter -->
+	<div class="modal fade myModal" id="alina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="clear:both;">
+		<img class="img-circle modal-image" src="~/images/alina.jpg" alt="Generic placeholder image" width="300" />
+		
+		<div class="modal-dialog row" role="document">
+
+			<div class="modal-content col-lg-8" >
+
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Alina Devar</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+Little is known about the origins of the Devarian family. Two generations back they arrived at Dunwood crossing with just enough coin to purchase the old mill down by the river. At first they were met with suspicion but has since established themselves as dependable and helpfull neighbours. One of the first thing they did after renovating the mill, was to build a bakery close to the mill. A low wall surrounds the mill, the bakery and a small storage building making up the Devarian estate.
+					</p><p>
+Alina is the oldest of tree daughters, Elana 12 and Ana 14 being the younger siblings. Her mother died giving birth to Elana and her fathers illness have left her running most of practical tasks of the bakery. Sadly the responsibilities and neverending tasks has set it's mark as she is a grim person, often seeing the negative before the positive.
+					</p>
+					<p>Grim and practical. Not one for flights of fancy or humor.</p>
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+			<div class="modal-content col-lg-3">
+	
+				<div class="modal-header">
+					Stats
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+					<ul class="stat">
+					<li class="stat-item">
+					<i>Strength</i>: <div style="float:right;text-align: right">13</div> 
+					</li>
+					<li class="stat-item">
+					<i>Dexterity</i>: <div style="float:right;text-align: right">16</div>
+					</li>
+					<li class="stat-item">
+					<i>Constitution</i>: <div style="float:right;text-align: right">17</div>
+					</li>
+					<li class="stat-item">
+					<i>Inteligence</i>: <div style="float:right;text-align: right">15</div>
+					</li>
+					<li class="stat-item">
+					<i>Wisdom</i>: <div style="float:right;text-align: right">8</div>
+					</li>
+					<li class="stat-item">
+					<i>Charisma</i>: <div style="float:right;text-align: right">9</div>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+				<b>Eyes</b>: Dark brown<br />
+<br /><b>Coloration</b>: Dark brown<br />
+<br /><b>Clothing</b>: Practical werables, never one for jewelry except a wooden carved archaic symbol give by her mother.<br />
+<br /><b>Accessories</b>: <br />
+<br /><b>Scars</b>: A short but intensly pale scar along her right cheeck where a stone mill cut her as a child<br />
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	 <div class="modal fade myModal" id="aram" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="clear:both;">
+		<img class="img-circle modal-image" src="~/images/aram.jpg" alt="Generic placeholder image" width="300" />
+		
+		<div class="modal-dialog row" role="document">
+
+			<div class="modal-content col-lg-8" >
+
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Aram Strongwall</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+The Strongwalls have a small farm a few hours march to the north of Dunwood crossing. The ground here is mainly sandstone with streaks of Hematite. For this reason a small strip mine was founded here, where both rocks for building and Hematite for melting and refining iron is mined. The Strongwalls are relatively rich from this endevour and have over the years become as close to nobles as most freemen can hope. In their employee are roughly 20 serfs, where the men work in the stripmine and the five females work in the main house and on the fields. The serfs are mostly from immigrants who have not been able to make a living on their own but contracted away their services for living room and food. They are not slaves though, and are treated fairly and even given the chance to purchase themselves out of serfdom. One house on the estate are reserved for serfs who has repayed their debt but choose to stay.
+					</p><p>
+Aram is the only child of the house since his 2 siblings died of fever in a very young age. Instead he found companionship in the serf girl Niva. When not occupied with duties, they could often be seen wrestling and running together through the fields. At 14 years of age, Aram started calling Niva his sister, to his mothers chagrin. Soon after he started working in the strip mine, both as a miner and as a foreman. It was important, his father said, that to lead men in an occupation, one has to know that occupation and one has to know what it means to be led.
+					</p>
+					<p>Generous, fair minded and protective. Makes an effort to full-fill a promise.</p>
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+			<div class="modal-content col-lg-3">
+	
+				<div class="modal-header">
+					Stats
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+					<ul class="stat">
+					<li class="stat-item">
+					<i>Strength</i>: <div style="float:right;text-align: right">16</div> 
+					</li>
+					<li class="stat-item">
+					<i>Dexterity</i>: <div style="float:right;text-align: right">9</div>
+					</li>
+					<li class="stat-item">
+					<i>Constitution</i>: <div style="float:right;text-align: right">8</div>
+					</li>
+					<li class="stat-item">
+					<i>Inteligence</i>: <div style="float:right;text-align: right">11</div>
+					</li>
+					<li class="stat-item">
+					<i>Wisdom</i>: <div style="float:right;text-align: right">9</div>
+					</li>
+					<li class="stat-item">
+					<i>Charisma</i>: <div style="float:right;text-align: right">12</div>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+				<b>Eyes</b>: Dark blue<br />
+<br /><b>Coloration</b>: Well developed tan on a medium skin tone.<br />
+<br /><b>Clothing</b>: Well dressed in mostly soft leather and linnen with some fur details<br />
+<br /><b>Accessories</b>:<br />
+<br /><b>Scars</b>: Plenty from an active life and plenty of wrestling<br />
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	 
+<div class="modal fade myModal" id="niva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="clear:both;">
+		<img class="img-circle modal-image" src="~/images/niva.jpg" alt="Generic placeholder image" width="300" />
+		
+		<div class="modal-dialog row" role="document">
+
+			<div class="modal-content col-lg-8" >
+
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Niva de Strongwall</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+The Strongwalls have a small farm a few hours march to the north of Dunwood crossing. The ground here is mainly sandstone with streaks of Hematite. For this reason a small strip mine was founded here, where both rocks for building and Hematite for melting and refining iron is mined. The Strongwalls are relatively rich from this endeavour and have over the years become as close to nobles as most freemen can hope. In their employee are roughly 20 serfs, where the men work in the strip mine and the five females work in the main house and on the fields. The serfs are mostly from immigrants who have not been able to make a living on their own but contracted away their services for living room and food. They are not slaves though, and are treated fairly and even given the chance to purchase themselves out of serfdom. One house on the estate are reserved for serfs who has repayed their debt but choose to stay.
+					</p><p>
+Niva has no memories of arriving to the north and no memories of her parents. She only knew Aram, whom she considers a brother and it wasn't until 12 years of age that she realized she was a serf. However, whether it was due to being so close to Aram, or the friendliness of the Strongwalls, never did she feel wrongly treated or an outsider. The only harsh treatment she ever got was from the matriarch of the family, but it was obvious that the feelings grew from a protectiveness of Aram than any true hostility and since the closeness with Aram never grew to beyond brother and sister, the Matriarch never took it further than the occasional scolding.
+					</p>
+					<p>Happy and carefree spirit. Sees evil in noone. Easy to trust and trusts easily</p>
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+			<div class="modal-content col-lg-3">
+	
+				<div class="modal-header">
+					Stats
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+					<ul class="stat">
+					<li class="stat-item">
+					<i>Strength</i>: <div style="float:right;text-align: right">16</div> 
+					</li>
+					<li class="stat-item">
+					<i>Dexterity</i>: <div style="float:right;text-align: right">13</div>
+					</li>
+					<li class="stat-item">
+					<i>Constitution</i>: <div style="float:right;text-align: right">11</div>
+					</li>
+					<li class="stat-item">
+					<i>Inteligence</i>: <div style="float:right;text-align: right">9</div>
+					</li>
+					<li class="stat-item">
+					<i>Wisdom</i>: <div style="float:right;text-align: right">7</div>
+					</li>
+					<li class="stat-item">
+					<i>Charisma</i>: <div style="float:right;text-align: right">11</div>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+				<b>Eyes</b>: Bright green<br />
+<br /><b>Coloration</b>:Fair with a solid tan<br />
+<br /><b>Clothing</b>: Functional but worn. Mostly linnen but with leather details.<br />
+<br /><b>Accessories</b>:<br />
+<br /><b>Scars</b>: Some small scars all over the body from an active life and allot of wrestling<br />
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	<div class="modal fade myModal" id="karon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="clear:both;">
+		<img class="img-circle modal-image" src="~/images/karon.jpg" alt="Generic placeholder image" width="300" />
+		
+		<div class="modal-dialog row" role="document">
+
+			<div class="modal-content col-lg-8" >
+
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Karon Task</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+Ever since childhood, Karon has felt a need to help and support those in need. He often found hurt animals which he took home (to his mothers horrified yells) and cared for until they became well. As soon as he could read, which he learnt at a suprisingly young age, he started to go through books like there was no tomorrow. Finally he found some of the answers he sought in a book called "The light of Helios". Soon thereafter he visited the temple and asked to join as a disciple. Being the younger brother of two, his parents did not mind much, indeed they were happy and even proud of their youngest son.
+					</p><p>
+Since then Karon has continued to be a gentle soul in the service of Helios. He freely cares for the sick and only asks for payment from those who clearly can afford such. 
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+			<div class="modal-content col-lg-3">
+	
+				<div class="modal-header">
+					Stats
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+					<ul class="stat">
+					<li class="stat-item">
+					<i>Strength</i>: <div style="float:right;text-align: right">8</div> 
+					</li>
+					<li class="stat-item">
+					<i>Dexterity</i>: <div style="float:right;text-align: right">13</div>
+					</li>
+					<li class="stat-item">
+					<i>Constitution</i>: <div style="float:right;text-align: right">8</div>
+					</li>
+					<li class="stat-item">
+					<i>Inteligence</i>: <div style="float:right;text-align: right">7</div>
+					</li>
+					<li class="stat-item">
+					<i>Wisdom</i>: <div style="float:right;text-align: right">17</div>
+					</li>
+					<li class="stat-item">
+					<i>Charisma</i>: <div style="float:right;text-align: right">14</div>
+					</li>
+					</ul>
+				</div>
+				<div class="modal-body" style="padding: 10px 0 10px 0;">
+				<b>Eyes</b>: Dark brown<br />
+<br /><b>Coloration</b>: Dark brown<br />
+<br /><b>Clothing</b>: Practical werables, never one for jewelry except a wooden carved archaic symbol give by her mother.<br />
+<br /><b>Accessories</b>: <br />
+<br /><b>Scars</b>: A short but intensly pale scar along her right cheeck where a stone mill cut her as a child<br />
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	 
+ 
+
+}

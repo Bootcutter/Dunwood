@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+@model DunwoodCrossing.Classes.Karachter
+<h2>Delete</h2>
+<div>
+    Name @Model.Name
+
+
+    <form method="post" action="@Url.Content("~/Home/DeleteKarachterPost")">
+    <br /><br /><br /><br /><br /><br /><br />
+
+  <input type="hidden" name="id" value="@Model.Id">
+
+  @Model.Name
+    <input type="submit" value="delete">
+
+</form>
