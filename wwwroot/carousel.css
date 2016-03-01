@@ -46,7 +46,15 @@ body {
 .input_list input, .input_list textarea{
     padding: 3px; border-radius: 5px; color: #222222;
 }
-
+.dead h1{    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 93px;}
+.dead img {opacity: 0.2;
+}
+.dead img:hover {
+opacity: 0.4;
+}
 .top_block
 {
     height: 70px;

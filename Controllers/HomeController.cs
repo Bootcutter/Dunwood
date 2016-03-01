@@ -18,8 +18,8 @@ namespace DunwoodCrossing.Controllers
     private IHostingEnvironment _environment;
     public HomeController(IHostingEnvironment environment, IKarachtersRepository repository)
     {
-      _repository = repository;
-      _environment = environment;
+        _repository = repository;
+        _environment = environment;
     }
 
         public IActionResult Index()
@@ -30,7 +30,6 @@ namespace DunwoodCrossing.Controllers
         public IActionResult Log()
         {
             ViewData["Message"] = "Log of Events";
-
             return View();
         }
 
@@ -38,7 +37,7 @@ namespace DunwoodCrossing.Controllers
         {
             var model = new DunwoodCrossing.ViewModels.KarachtersViewModel();
             var data =  _repository.GetAllKarachters().ToList();
-           model.Karachters = data;
+            model.Karachters = data;
             ViewData["Message"] = "Characters";
 
             return View(model);
@@ -46,18 +45,20 @@ namespace DunwoodCrossing.Controllers
         
           public IActionResult AddCharacter()
         {
-           
-
             return View();
+        }
+
+        public IActionResult UpdateCharacter(int id)
+        {
+           var data = _repository.GetKarachterById(id);
+           return View(data);
         }
 
 
          public IActionResult DeleteCharacter(int id)
         {
            var data = _repository.GetKarachterById(id);
-           
-
-            return View(data);
+           return View(data);
         }
 
 
@@ -82,6 +83,34 @@ namespace DunwoodCrossing.Controllers
               
                
       if ( _repository.AddKarachterAsync(newKarachter))
+      {
+        
+      }
+
+      return RedirectToAction("Characters");
+    }
+
+ [HttpPost]
+ public ActionResult UpdateKarachterPost(DunwoodCrossing.Classes.Karachter updateKarachter, IFormFile file, IFormFile filesquare)
+    {
+    
+              var uploads = Path.Combine(_environment.WebRootPath,"uploads"); 
+               if(file != null && file.Length>0)
+               {
+                 var fileName = Microsoft.Net.Http.Headers.ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                 file.SaveAs(Path.Combine(uploads,fileName));
+                 updateKarachter.FileName = "~/uploads/" + fileName;
+               } 
+                  if(filesquare != null && filesquare.Length > 0)
+               {
+                 var fileSquareName = Microsoft.Net.Http.Headers.ContentDispositionHeaderValue.Parse(filesquare.ContentDisposition).FileName.Trim('"');
+                 filesquare.SaveAs(Path.Combine(uploads,fileSquareName));
+                 updateKarachter.SquareFileName = "~/uploads/" +fileSquareName;
+               }
+              
+              
+               
+      if ( _repository.UpdateKarachterAsync(updateKarachter))
       {
         
       }

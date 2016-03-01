@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@model DunwoodCrossing.Classes.Karachter
+
+    <form method="post" action="@Url.Content("~/Home/UpdateKarachterPost")" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <br /><br /><br /><br /><br /><br /><br />
+<ul class="input_list">
+    <li>
+ <input asp-for="Name" class="form-control" /> Name
+ </li>
+ <li>
+<textarea class="text_area" placeholder="Background, use || to insert ny paragraph" asp-for="Background" id="background"></textarea>
+ </li>
+ <li>
+    <input asp-for="Strength" /> Strength:
+ </li>
+ <li>
+    <input asp-for="Dexterity" /> Dexterity
+ </li>
+ <li>
+    <input asp-for="Constitution" /> Constitution
+ </li>
+ <li>
+    <input asp-for="Intelligence" /> Intelligence
+ </li>
+ <li>
+    <input asp-for="Wisdom" /> Wisdom
+ </li>
+ <li>
+    <input asp-for="Charisma" /> Charisma
+ </li>
+ <li>
+    <input asp-for="Hitpoints" /> Hitpoints
+ </li>
+ <li>
+  <textarea class="text_area" asp-for="Quote" placeholder="Quote, use || to insert ny paragraph" name="Quote" id="quote"></textarea>
+  </li>
+  <li>
+      <textarea class="text_area" asp-for="Description" placeholder="Description, use || to insert ny paragraph" name="Description" id="description"></textarea>
+      </li>
+</ul>
+Big picture  <input type="file" name="file" />
+All sides equal  <input type="file" name="filesquare" />
+  
+    <input type="submit" value="Update Character" style="padding: 5px; border-radius: 5px; color: #222222; margin: 10px 0; ">
+
+</form>
