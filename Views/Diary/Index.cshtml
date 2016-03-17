@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Log";
+}
+@model DunwoodCrossing.ViewModels.DiaryViewModel
+<div class="container marketing">
+<h2>@ViewData["Title"].</h2>
+
+
+@foreach(var post in Model.DiaryPosts)
+{
+<div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">@post.Post.Title</h2>
+          <p class="lead">@post.Post.Date</p>
+          <p class="lead">@post.Name</p>
+           <p>@post.Post.Main</p>
+       
+          </div>
+        <div class="col-md-5">
+       <img class="img-circle " src="@post.ImageUrl" alt="Generic placeholder image" width="450"/>
+         </div>
+      </div>
+      }
+      
+      </div>

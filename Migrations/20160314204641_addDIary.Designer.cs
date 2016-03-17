@@ -8,29 +8,14 @@ using DunwoodCrossing.Classes;
 namespace DunwoodCrossing.Migrations
 {
     [DbContext(typeof(KarachtersContext))]
-    partial class KarachtersContextModelSnapshot : ModelSnapshot
+    [Migration("20160314204641_addDIary")]
+    partial class addDIary
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("DunwoodCrossing.Classes.DiaryPost", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Date");
-
-                    b.Property<string>("Main");
-
-                    b.Property<string>("Title");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("Id");
-                });
 
             modelBuilder.Entity("DunwoodCrossing.Classes.Karachter", b =>
                 {

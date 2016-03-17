@@ -15,10 +15,11 @@ public class KarachtersContext : DbContext
   }
  
   public DbSet<Karachter> Karachters { get; set; }
- 
+ public DbSet<DiaryPost> Posts {get; set; }
   protected override void OnModelCreating(ModelBuilder builder)
   {
     builder.Entity<Karachter>().HasKey(v => v.Id);
+    builder.Entity<DiaryPost>().HasKey(v => v.Id);
  
     base.OnModelCreating(builder);
   }

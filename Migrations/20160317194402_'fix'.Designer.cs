@@ -8,9 +8,10 @@ using DunwoodCrossing.Classes;
 namespace DunwoodCrossing.Migrations
 {
     [DbContext(typeof(KarachtersContext))]
-    partial class KarachtersContextModelSnapshot : ModelSnapshot
+    [Migration("20160317194402_'fix'")]
+    partial class fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")

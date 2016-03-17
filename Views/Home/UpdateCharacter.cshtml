@@ -48,3 +48,26 @@ All sides equal  <input type="file" name="filesquare" />
     <input type="submit" value="Update Character" style="padding: 5px; border-radius: 5px; color: #222222; margin: 10px 0; ">
 
 </form>
+
+
+  <form method="post" action="@Url.Content("~/Diary/InsertNewPost")" enctype="multipart/form-data">
+    <input type="hidden" name="characterId" value="@Model.Id" />
+   
+<ul class="input_list">
+    <li>
+        <input type="text" name="title"/> Title
+    </li>
+    
+    <li>
+            <input type="text" name="date"/> Date
+    
+    </li>
+    <li>
+            <textarea class="text_area" name="post" placeholder="The log post"></textarea> Log Post
+    
+    </li>
+    
+    </ul>
+     <input type="submit" value="Add Post" style="padding: 5px; border-radius: 5px; color: #222222; margin: 10px 0; ">
+
+    </form>

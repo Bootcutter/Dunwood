@@ -42,6 +42,7 @@ namespace DunwoodCrossing
     {
       options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);
     });
+    services.AddScoped<Classes.IDiaryRepository, Classes.KarachtersRepository>();
    
     services.AddScoped<Classes.IKarachtersRepository, Classes.KarachtersRepository>();
     services.AddMvc();
