@@ -27,9 +27,9 @@ namespace DunwoodCrossing.Controllers
             return View();
         }
 
-        public IActionResult Log()
+        public IActionResult Places()
         {
-            ViewData["Message"] = "Log of Events";
+            ViewData["Message"] = "Places of notice";
             return View();
         }
 
