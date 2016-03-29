@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Log";
+    var index = 0;
 }
 @model DunwoodCrossing.ViewModels.DiaryViewModel
 <div class="container marketing">
@@ -8,18 +9,26 @@
 
 @foreach(var post in Model.DiaryPosts)
 {
+    index++;
+    var id= $"id{index}";
 <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">@post.Post.Title</h2>
-          <p class="lead">@post.Post.Date</p>
-          <p class="lead">@post.Name</p>
-           <p>@post.Post.Main</p>
-       
-          </div>
-        <div class="col-md-5">
-       <img class="img-circle " src="@post.ImageUrl" alt="Generic placeholder image" width="450"/>
+    <div class="col-md-12">
+         <h2 class="featurette-heading">@post.Post.Title</h2>
          </div>
+          <div class="col-md-2">
+       <img class="img-circle " src="@post.ImageUrl" alt="Generic placeholder image" width="150"/>
+         </div>
+        <div class="col-md-10"  data-toggle="collapse">
+         <p class="lead">@post.Post.Date</p>
+          <p class="lead">@post.Name</p>
+           <p class="collapse" id="@id">@post.Post.Main</p>
+       <a href="#" data-toggle="collapse" data-target="#@id"> show more </a>
+          </div>
+          
+       
       </div>
       }
       
       </div>
+      
+     
