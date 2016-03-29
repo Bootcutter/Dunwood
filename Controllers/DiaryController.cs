@@ -35,8 +35,8 @@ namespace DunwoodCrossing.Controllers
               var diaryPost = new DiaryPostViewModel()
               {
                   Post = post,
-                  Name = characters[post.UserId].Name,
-                  ImageUrl = characters[post.UserId].FileName
+                  Name = characters.ContainsKey(post.UserId) ? characters[post.UserId].Name : "Unknown",
+                  ImageUrl = characters.ContainsKey(post.UserId) ? characters[post.UserId].FileName : ""
               };
               return diaryPost;
             });
