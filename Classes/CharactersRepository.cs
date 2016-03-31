@@ -85,6 +85,17 @@ public DiaryPost GetDiaryPostById(int id)
 
     public bool UpdateKarachterAsync(Karachter Karachter)
     {
+        if(string.IsNullOrEmpty(Karachter.FileName))
+        {
+            var old = GetKarachterById(Karachter.Id);
+            Karachter.FileName = old.FileName;
+            }
+       if(string.IsNullOrEmpty(Karachter.SquareFileName))
+        {
+            var old = GetKarachterById(Karachter.Id);
+            Karachter.SquareFileName = old.SquareFileName;
+            }
+   
       _context.Karachters.Update(Karachter);
 
       return ( _context.SaveChanges() > 0);
