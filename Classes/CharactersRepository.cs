@@ -62,10 +62,14 @@ public DiaryPost GetDiaryPostById(int id)
         .ToList();
     }
 
-  public Karachter GetKarachterById(int id)
+  public Karachter GetKarachterById(int id, bool isNoTrack = false)
     {
-        return _context.Karachters
-        .Where(ch=> ch.Id == id)
+        var query = _context.Karachters.Where(ch=> ch.Id == id);
+        if(isNoTrack)
+        {
+            query = query.AsNoTracking();
+        }
+        return query
         .FirstOrDefault();
     }
     public bool DeleteKarachter(int id)
@@ -85,17 +89,17 @@ public DiaryPost GetDiaryPostById(int id)
 
     public bool UpdateKarachterAsync(Karachter Karachter)
     {
+        
+        var oldCharacter = GetKarachterById(Karachter.Id, true);
         if(string.IsNullOrEmpty(Karachter.FileName))
         {
-            var old = GetKarachterById(Karachter.Id);
-            Karachter.FileName = old.FileName;
+            Karachter.FileName = oldCharacter.FileName;
             }
        if(string.IsNullOrEmpty(Karachter.SquareFileName))
         {
-            var old = GetKarachterById(Karachter.Id);
-            Karachter.SquareFileName = old.SquareFileName;
+            Karachter.SquareFileName = oldCharacter.SquareFileName;
             }
-   
+
       _context.Karachters.Update(Karachter);
 
       return ( _context.SaveChanges() > 0);

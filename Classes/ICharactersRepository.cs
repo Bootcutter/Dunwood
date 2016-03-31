@@ -7,7 +7,7 @@ namespace DunwoodCrossing.Classes
   {
     IEnumerable<DunwoodCrossing.Classes.Karachter> GetAllKarachters();
     Karachter GetKarachterByNameAsync(string Karachtername);
-    Karachter GetKarachterById(int id);
+    Karachter GetKarachterById(int id, bool isNoTrack = false);
     bool DeleteKarachter(int id);
     bool AddKarachterAsync(Karachter newKarachter);
     bool UpdateKarachterAsync(Karachter Karachter);
