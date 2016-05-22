@@ -1,0 +1,149 @@
+@{
+    ViewData["Title"] = "Log";
+    var index = 0;
+}
+
+<div class="container marketing">
+<h2>@ViewData["Title"].</h2>
+
+
+<div class="row featurette">
+        <div class="col-md-12">
+          <h2 class="featurette-heading">REGELTILLÄGG</h2>
+            </div>
+ 
+ <div class="col-md-12">
+          <h3 >Non Weapon Proficiencies:</h3>
+           <p>
+           Alla  karaktärer som bli level 1 får välja två NWP, modifierat av INT: #languages/2, avrundat neråt.
+      <ul><li>     Diplomacy wis+cha/2 
+          </li><li>
+Healing Wis</li><li>
+Hunting Dex+Wis/2</li><li>
+Leadership cha</li><li>
+Recon Wis</li><li>
+Religion Int+Cha/2</li><li>
+Tactics Int+wis/2</li></ul>
+          
+</p>
+
+
+
+
+
+
+
+
+<p>
+Ovanstående kan ha en direkt inverkan i metaspelet <br/>
+
+Övriga:
+<ul><li>
+Additional language wis</li><li>
+Animal handling wis</li><li>
+Artistic expression cha</li><li>
+Craft varies</li><li>
+Herbalism int</li><li>
+History int+wis/2</li><li>
+Mountaneering wis</li><li>
+Read/write wis</li><li>
+Riding dex</li><li>
+Smithing int</li><li>
+Survival Wis</li><li>
+Swimming dex</li><li>
+Tracking wis</li><li>
+Trading cha</li>    </ul>
+
+Tillgängliga endast under mycket speciella omständigheter:
+<ul><li>
+Engineering (specify) int</li><li>
+Forgery int</li><li>
+Spellcraft int</li>
+</ul>
+
+<h3>Weapon Proficiencies</h3>
+
+<p>Enligt reglerna med följande tillägg:
+<br/>
+Fighters, Rangers och Paladins kan specialisera sig på ett vapen genom att betala totalt två proficiencies. Rena fighters kan vid level 5 betala en tredje proficiency och få +3 attack och +3 damage.
+En proficiency kan också läggas på att hantera sköld vilket medför ytterligare ett bättre i AC.
+</p>
+  </div>
+  
+    <div class="col-md-12">
+          <h3 >Vapenlistor</h3>
+<table>
+   <tr>
+        <th>2-H Weapon </th><th>Damage </th><th>Weight</th><th>Cost</th><th>Special</th></tr>
+<tr><td>	Battle Axe	</td><td>	d8+1/4d4	</td><td>	20	</td><td>	6	</td><td>	may strike adjacent foe when scoring a critical hit	</td></tr>
+<tr><td>	Flail	</td><td>	d8+1/4d4	</td><td>	20	</td><td>	3	</td><td>	Ignore shield bonus 20% chance to hit self when fumbling	</td></tr>
+<tr><td>	Pole Arm	</td><td>	d8+1/4d4	</td><td>	20	</td><td>	6	</td><td>	"+1 Initiative if facing foe	</td></tr>
+<tr><td>	Quarter Staff	</td><td>	d6/d6	</td><td>	10	</td><td>	Free	</td><td>	may use dex-bonus (missile attack	</td></tr>
+<tr><td>	Spear	</td><td>	d8+1/4d4	</td><td>	15	</td><td>	1	</td><td>	"+1 Initiative if facing foe	</td></tr>
+<tr><td>	Sword	</td><td>	d10/3d6	</td><td>	25	</td><td>	30	</td><td>		</td></tr>
+<tr><td>	Warhammer	</td><td>	d8+1/4d4	</td><td>	20	</td><td>	7	</td><td>	"+2 to hit AC3 or better	</td></tr>
+</table>
+
+
+<table> 
+    <tr>    <th>1-H Weapon </th><th>Damage </th><th>Weight</th><th>Cost</th><th>Special</th></tr>
+        <tr><td>	Axe, Battle	</td><td>	d6+1/d6+1	</td><td>	7	</td><td>	8	</td><td>		</td></tr>
+<tr><td>	Axe, Hand	</td><td>	d4+1/d4+1	</td><td>	4	</td><td>	6	</td><td>		</td></tr>
+<tr><td>	Club	</td><td>	d4/d4	</td><td>	5	</td><td>	Free	</td><td>		</td></tr>
+<tr><td>	Dagger	</td><td>	d4/d4	</td><td>	1	</td><td>	2	</td><td>		</td></tr>
+<tr><td>	Flail	</td><td>	d6+1/d6+1	</td><td>	7	</td><td>	8	</td><td>	"+1 to hit vs shield wearing foe	</td></tr>
+<tr><td>	Lance	</td><td>	d10/3d6	</td><td>	15	</td><td>	8	</td><td>	May only be used while mounted	</td></tr>
+<tr><td>	Mace	</td><td>	d6+1/d6+1	</td><td>	7	</td><td>	8	</td><td>		</td></tr>
+<tr><td>	Morning Star	</td><td>	d6+1/d6+1	</td><td>	7	</td><td>	8	</td><td>		</td></tr>
+<tr><td>	Rapier	</td><td>	d6/d6	</td><td>	4	</td><td>	10	</td><td>	may use dex-bonus (missile attack	</td></tr>
+<tr><td>	Spear	</td><td>	d6/d6	</td><td>	5	</td><td>	3	</td><td>		</td></tr>
+<tr><td>	Swoard, Broad	</td><td>	d6+1/d6+1	</td><td>	6	</td><td>	12	</td><td>		</td></tr>
+<tr><td>	Sword, Long	</td><td>	d8/d8	</td><td>	7	</td><td>	15	</td><td>	Str req 15	</td></tr>
+<tr><td>	Sword, Scimitar	</td><td>	d6+1/d6+1	</td><td>	6	</td><td>	12	</td><td>		</td></tr>
+<tr><td>	Sword, Short	</td><td>	d4+1/d4+1	</td><td>	4	</td><td>	8	</td><td>		</td></tr>
+<tr><td>	Trident	</td><td>	d6/d6	</td><td>	5	</td><td>	5	</td><td>		</td></tr>
+<tr><td>	Warhammer	</td><td>	d6+1/d6+1	</td><td>	6	</td><td>	7	</td><td>	"+2 to hit AC3 or better	</td></tr>
+        </table>
+<table> <tr> 
+        <th>Raned Weapon </th><th>Damage </th><th>Rate of Fire</th><th>Range</th><th>Weight/Cost</th></tr>
+        <tr><td>	Axe	</td><td>	d6+1	</td><td>	1	</td><td>	10 ft	</td><td>	"6/6	</td></tr>
+<tr><td>	Bow, Long	</td><td>	d6/d6	</td><td>	1	</td><td>	60 ft	</td><td>	12/20	</td></tr>
+<tr><td>	Bow, Short	</td><td>	d6/d6	</td><td>	1	</td><td>	40 ft	</td><td>	8/15	</td></tr>
+<tr><td>	Club	</td><td>	d4/d3	</td><td>	1	</td><td>	10 ft	</td><td>	5/free	</td></tr>
+<tr><td>	Crossbow, Heavy	</td><td>	d8+1/d8+1	</td><td>	0,5	</td><td>	60 ft	</td><td>	12/30 (+1 to hit)	</td></tr>
+<tr><td>	Crossbow, Light	</td><td>	d6/d6	</td><td>	0,5	</td><td>	40 ft	</td><td>	4/12 (+1 to hit)	</td></tr>
+<tr><td>	Dagger	</td><td>	d4/d4	</td><td>	2	</td><td>	10 ft	</td><td>	"1/2	</td></tr>
+<tr><td>	Dart	</td><td>	d3/d2	</td><td>	3	</td><td>	15 ft	</td><td>	0,5/0,2	</td></tr>
+<tr><td>	Hammer	</td><td>	d4+1/d4	</td><td>	1	</td><td>	10 ft	</td><td>	"5/1	</td></tr>
+<tr><td>	Javelin	</td><td>	d6+1/d6+1	</td><td>	1	</td><td>	20 ft	</td><td>	20/0,5	</td></tr>
+<tr><td>	Sling	</td><td>	d4/d4	</td><td>	1	</td><td>	35 ft	</td><td>	0,5/0,5	</td></tr>
+<tr><td>	Spear	</td><td>	d6/d6	</td><td>	1	</td><td>	15 ft	</td><td>	"5/3	</td></tr>
+<tr><td>	Staff Sling	</td><td>	d4+1/d4+1	</td><td>	1	</td><td>	40 ft	</td><td>	"7/3	</td></tr>
+        </table>
+
+</div>
+
+  <div class="col-md-12">
+          <h3>Magic</h3>
+
+
+<p>
+Level 1 Magic users lär sig 4 spells. Den första är read magic, två slumpas från min hemliga lista och en fjärde får väljas från OSRIC-listan samt följande:
+</p>
+<div class="col-md-6">
+<H4>Armor (Conjuration)</H4> <p class="lead">Range: Touch Components: V, S, M Duration: Special Casting Time: 1 rd. Area of Effect: 1 creature Saving Throw: None </p><p>By means of this spell, the wizard creates a magical field of force that serves as if it were scale mail armor (AC 6). The spell has no effect on a person already armored or a creature with Armor Class 6 or better. It is not cumulative with the shield spell, but it is cumulative with Dexterity and, in case of fighter/mages, with the shield bonus. The armor spell does not hinder movement or prevent spellcasting, and adds no weight or encumbrance. It lasts until successfully dispelled or until the wearer sustains cumulative damage totaling greater than 8 points + 1 per level of the caster. (It is important to note that the armor does not absorb this damage. The armor merely grants an AC of 6; the wearer still suffers full damage from any successful attacks.) Thus, the wearer might suffer 8 points from an attack, then several minutes later sustain an additional 1 point of damage. Unless the spell were cast by a wizard of 2nd level or higher, it would be dispelled at this time. Until it is dispelled, the armor spell grants the wearer full benefits of the Armor Class gained. The material component is a piece of finely cured leather that has been blessed by a priest. 
+</p></div>
+<div class="col-md-6">
+<h4>Chill Touch (Necromancy)</h4><p class="lead"> Range: 0 Components: V, S Duration: 3 rds. + 1 rd./level Casting Time: 1 Area of Effect: The caster Saving Throw: Neg.</p> <p>When the caster completes this spell, a blue glow encompasses his hand. This energy attacks the life force of any living creature upon which the wizard makes a successful melee attack. The touched creature must roll a successful saving throw vs. spell or suffer 1d4 points of damage and lose 1 point of Strength. If the save is successful, the creature remains unharmed. Creatures not rated for Strength suffer a -1 penalty to their attack rolls for every other successful touch. Lost Strength returns at the rate of 1 point per hour. Damage must be cured magically or healed naturally. This spell has a special effect on undead creatures. Undead touched by the caster suffer no damage or Strength loss, but they must successfully save vs. spell or flee for 1d4 rounds + 1 round per level of the caster. 
+</p></div>
+<div class="col-md-6">
+<h4>Shocking Grasp (Alteration)</h4><p class="lead"> Range: Touch Components: V, S Duration: Special Casting Time: 1 Area of Effect: Creature touched Saving Throw: None </p><p>When the wizard casts this spell, he develops a powerful electrical charge that gives a jolt to the creature touched. The spell remains in effect for one round per level of the caster or until it is discharged by the caster touching another creature. The shocking grasp delivers 1d8 points of damage, plus 1 point per level of the wizard (for example, a 2ndlevel wizard would discharge a shock causing 1d8+2 points of damage). While the wizard must come close enough to his opponent to lay a hand on the opponent's body or upon an electrical conductor that touches the opponent's body, a like touch from the opponent does not discharge the spell. </div>
+</p><div class="col-md-6">
+<h4>Sleep (Enchantment/Charm)</h4><p class="lead"> Range: 30 yds. Components: V, S, M Duration: 5 rds./level Casting Time: 1 Area of Effect: Special Saving Throw: None</p> <p>When a wizard casts a sleep spell, he causes a comatose slumber to come upon one or more creatures (other than undead and certain other creatures specifically excluded from the spell's effects). All creatures to be affected by the sleep spell must be within 30 feet of each other. The number of creatures that can be affected is a function of Hit Dice or levels. The spell affects 2d4 Hit Dice of monsters. Monsters with 4+3 Hit Dice (4 Hit Dice plus 3 hit points) or more are unaffected. The center of the area of effect is determined by the spellcaster. The creatures with the least Hit Dice are affected first, and partial effects are ignored. For example, a wizard casts sleep at three kobolds, two gnolls, and an ogre. The roll (2d4) result is 4. All the kobolds and one gnoll are affected (_ + _ + _ + 2 = 3 _ Hit Dice). Note that the remainder is not enough to affect the last gnoll or the ogre. Slapping or wounding awakens affected creatures but normal noise does not. Awakening requires one entire round. Magically sleeping opponents can be attacked with substantial bonuses (see "Modifiers to the Attack Roll" in Chapter 9: Combat). The material component for this spell is a pinch of fine sand, rose petals, or a live cricket 
+</p></div>
+<div class="col-md-12">
+<h2>Recasting spells
+</h2><p>
+Arcane magic users  (Bards, Mages och Illusionists) kan återanvända redan lagda spells. Detta medför d4/spell level i dam. Kan som mest användas tre gånger. 
+Även Divine casters (Clerics, Druids, Paladins, Rangers) kan återanvända spells mot skada med tillägget att det finns en kumulativ 10% risk att förarga guden. Då måste ett fullt dygn ägnas åt botgöring.
+</p></div></div>

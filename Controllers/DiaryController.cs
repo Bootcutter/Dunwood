@@ -45,6 +45,13 @@ namespace DunwoodCrossing.Controllers
 
             return View(model);
         }
+           public IActionResult DeleteDiary(int id)
+        {
+            _diaryRepository.DeleteDiaryPost(id);
+       
+
+      return RedirectToAction("Characters");
+        }
 
  [HttpPost]
 public IActionResult InsertNewPost(string post, string title, string date, int characterId)
